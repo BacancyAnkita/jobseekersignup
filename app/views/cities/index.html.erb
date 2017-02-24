@@ -1,0 +1,6 @@
+<% @cities.each do |c| %>
+  </br><br></br>
+  City name: <%= c.name %></br>
+  <%= link_to "Edit city name",edit_city_path(c)%>
+  <%= link_to "Delete",city_path(c), method: :delete, data: { confirm: 'Are you sure?' }%>
+<% end %>

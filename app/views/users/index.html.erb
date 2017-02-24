@@ -1,0 +1,9 @@
+<% @users.each do |s| %>
+  </br><br></br>
+  Name: <%= s.name %></br>
+  Email: <%= s.email %></br>
+  Password: <%= s.password %></br>
+  Mobile: <%= s.mobile %></br>
+  City: <%= s.city %><br><br><br>
+<%= link_to "Back", new_user_path(s) %>
+<% end %>

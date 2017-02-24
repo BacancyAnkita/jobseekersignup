@@ -1,0 +1,17 @@
+<%= form_for @user do |s| %>
+<br><br><h4>Sign Up</h4>
+<li><br>
+  <%= s.label('Name:') %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= s.text_field :name %><br><br>
+  <%= s.label('Email:') %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= s.email_field :email %><br><br>
+  <%= s.label('Password:') %>
+  <%= s.password_field :password %><br><br>
+  <%= s.label('Mobile:') %>&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= s.telephone_field :mobile %><br><br>
+  <%= s.label("City")%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <%= s.collection_select(:city, City.all,:name,:name) %><br><br>
+
+  <%= s.submit "Sign Up" %>
+</li>
+<% end %>
