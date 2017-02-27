@@ -14,10 +14,10 @@ class CitiesController < ApplicationController
     end
   end
   def edit
-     @city = City.find(id: params[:id])
+     @city = City.find_by(id: params[:id])
   end
   def update
-    @city = City.find(id: params[:id])
+    @city = City.find_by(id: params[:id])
 
     if @city.update(cities_param)
       redirect_to cities_path
