@@ -1,0 +1,44 @@
+  <h1> List of All Jobs </h1>
+<%= will_paginate @jobs %>
+  <%@jobs.each do |job|%>
+  <%= link_to job do %>
+
+    <div class="row">
+    <div class="col-sm-8" style="background-color:white;">
+    <div class="panel panel-default">
+
+      <div class="panel-heading"><%=job.role.name%></div>
+      <div class="panel-body">
+        <div class="row">
+        <div class="col-sm-8" style="background-color:lavender;">
+
+          company name :
+          <%=job.company.name%>
+        </div>
+      </div>
+
+      <div class="row">
+      <div class="col-sm-4" style="background-color:lavender;">
+        <span class="glyphicon glyphicon-briefcase"></span>
+        Experience :
+        <%=job.experience%> years +
+      </div>
+      <div class="col-sm-4" style="background-color:lavender;">
+        location :
+        <%= City.find(Company.find(job.company_id).city_id).name %>
+      </div>
+    </div>
+
+    <div class="row">
+    <div class="col-sm-8" style="background-color:lavender;">
+      skills
+      All Skills
+    </div>
+  </div>
+  </div>
+  <div class="panel-footer"> salary : <%=job.salary%> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Posted By :<%= Employer.find(Company.find(job.company_id).employer_id).first_name %> </div>
+</div>
+
+</div></div> </a>
+  <%end%>
+    <%end%>
